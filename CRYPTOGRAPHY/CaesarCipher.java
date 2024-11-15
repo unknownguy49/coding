@@ -12,18 +12,11 @@ class CaesarCipher
         for(int i=0;i<w.length();i++)
         {
             char ch=w.charAt(i);
-            if(ch==' ')
+            if(ch>='A'&&ch<='Z')
             {
-                f=f+ch;
-                continue;
+                ch=(char)((ch-'A'+3)%26+'A');
             }
-            
-            if(ch<='W') 
-            ch=(char)((int)ch+3); 
-            else
-            ch=(char)((int)(ch+3)-26);
             f=f+ch;
-            
         }
         
         System.out.println("Encrypted message: "+f);
